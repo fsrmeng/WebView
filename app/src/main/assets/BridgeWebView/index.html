@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--屏幕适配：viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="js/jquery.min.js"></script>
+    <title>js和android通信</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font: 400 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+        }
+
+        button{
+            border-style: none;
+            width: 94%;
+            border-radius: 8px;
+            background-color: #28daff;
+            margin-top: 10px;
+            margin-left: 3%;
+            margin-right: 3%;
+            height: 42px;
+            font-size: 18px;
+            color: white;
+        }
+
+        button:active{
+            background-color: #18b0ff;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn1">js调用android吐司</button>
+    <button id="btn3">H5详情页（callback式调用安卓）</button>
+
+<script>
+
+    $("#btn1").on("click", function(){
+        var json = {"data": "I am a toast"};
+        window.location.href="app://showgame.toast?"+JSON.stringify(json);
+    });
+
+    $("#btn3").on("click", function(){
+        //页面跳转
+        location.href = "orderDetail.html";
+    });
+
+</script>
+</body>
+
+</html>
